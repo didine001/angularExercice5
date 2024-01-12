@@ -1,0 +1,39 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="row" *ngIf="voitureSelectionnee">
+          <div class="col">
+            <div class="card">
+              <div class="card-header">
+                Détails de la voiture {{ voitureSelectionnee.id }}
+              </div>
+              <div class="card-body">
+                <p>Marque: {{ voitureSelectionnee.marque }}</p>
+                <p>Modèle: {{ voitureSelectionnee.modele }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>    
+        <table class="table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Marque</th>
+              <th>Modèle</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let voiture of voitures">
+              <td>{{ voiture.id }}</td>
+              <td>{{ voiture.marque }}</td>
+              <td>{{ voiture.modele }}</td>
+              <td>
+                <button class="btn btn-primary" (click)="afficherDetails(voiture)">Détails</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
